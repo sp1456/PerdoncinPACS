@@ -1,0 +1,21 @@
+#DATA FILE for Stokes2D test case
+
+subsection Geometry
+  set Mesh File = mesh.msh
+end
+
+subsection Problem
+  set forcing term=0,0,0
+  set boundary conditions=0,-1*(x==1)
+end
+
+subsection PDAS
+  set alpha=1e-8
+  set kmax=150
+  set a=-550,-550
+  set b=550,550
+  set z=y-0.5,-(x-0.5)
+
+end
+
+  set Fe=1 #pressure space

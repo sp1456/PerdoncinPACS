@@ -1,0 +1,20 @@
+#DATA FILE for Laplace3D test case
+
+subsection Geometry
+  set Mesh File = mesh.msh
+end
+
+subsection Problem
+  set forcing term=0
+  set boundary conditions=-x*exp(-((x-0.5)*(x-0.5)+(y-0.5)*(y-0.5)+(z-0.5)*(z-0.5)))
+end
+
+subsection PDAS
+  set alpha=1e-2
+  set kmax=150
+  set a=-0.15*(x<0.5)-0.2*(x>=0.5)
+  set b=-0.01*exp(-x*x-y*y-z*z)
+  set z=-x*exp(-((x-0.5)*(x-0.5)+(y-0.5)*(y-0.5)+(z-0.5)*(z-0.5)))
+end
+
+  set Fe=1

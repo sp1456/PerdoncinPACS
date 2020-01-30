@@ -1,0 +1,46 @@
+# PDAS LIBRARY
+
+Library for solving control-constrained linear quadratic Optimal Control Problems (OCPs) by using the Primal Dual Active Set (PDAS) algorithm. The library is focused on Laplace and Stokes OCPs.
+
+
+include          -> header files of the library
+include\muParser -> header files from muparser library needed to run the code
+Examples         -> some test cases
+
+
+ ****** PREREQUISITES ******
+
+- a C++14 compliant compiler (we used GCC version 7.1.0)
+- deal.II >= 9.1.1
+- Cmake >= 3.7
+
+Please refer to the relative webpages for detailed instructions about their installation.
+
+To run properly the code deal.II needs at least the following external libraries:
+- boost  >= 1.63
+- trilinos >= 12.6.3
+- p4est >= 2.0
+- tbb >= 2017
+- petsc >= 3.6.3
+- suitesparse >= 4.5.4
+Note that deal.II must be correctly interfaced to these libraries during its installation phase. For detailed information we refer the reader to dealii installation guide.
+
+
+
+ ****** COMPILATION ******
+
+Since it is a header-only library, to use it just point the compiler at the location of the header files contained in the "include" directory.
+To work properly the library needs some header files from the muparser library, so it is necessary to make the compiler point also at that location. For convenience, in case muparser is not already installed, the required headers are already provided in the subfolder "include/muParser".
+
+The folder "Examples" contains some test cases organized in different subfolders, each containing its own CMakeLists.txt file for the generation of the Makefile. Note that the CMakeLists files are customized for a folder structured as the one provided.
+To compile and run the desired example, move to its subfolder and follow the instructions below:
+
+cmake -DDEAL_II_DIR=/path/to/dealii/installation .
+make
+.\main -f data_file.prm
+
+
+
+
+
+
