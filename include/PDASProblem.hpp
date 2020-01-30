@@ -1,3 +1,6 @@
+/********************************************************************************
+PDASProblem Class: abstract base class for generic OCPs solved with PDAS method
+********************************************************************************/
 #include <deal.II/grid/tria.h>
 #include <deal.II/grid/tria_accessor.h>
 #include <deal.II/grid/tria_iterator.h>
@@ -229,7 +232,7 @@ void PDASProblem<dim>::make_grid(){
   std::ifstream f(mesh);
   gridin.read_msh(f);  //read mesh from file
 
-  //force all boundary tags to zero to be consistent with apply_bc functions
+  //force all boundary tags to zero to be consistent with apply_boundary_values function
   for (const auto &cell : triangulation.active_cell_iterators())
       for (unsigned int f = 0; f < GeometryInfo<dim>::faces_per_cell; ++f)
         if (cell->face(f)->at_boundary()){

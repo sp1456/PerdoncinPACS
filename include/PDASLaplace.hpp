@@ -1,3 +1,7 @@
+/********************************************************************************
+PDASLaplace Class for solving Laplace OCPs
+********************************************************************************/
+
 #include <deal.II/grid/tria.h>
 #include <deal.II/grid/tria_accessor.h>
 #include <deal.II/grid/tria_iterator.h>
