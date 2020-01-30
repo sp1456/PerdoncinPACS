@@ -37,7 +37,7 @@ To compile and run the desired example, move to its subfolder and follow the ins
 
 cmake -DDEAL_II_DIR=/path/to/dealii/installation .
 make
-.\main -f data_file.prm
+./main -f data_file.prm
 
 
 
